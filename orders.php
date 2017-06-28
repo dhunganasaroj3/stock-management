@@ -72,13 +72,13 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="clientName" class="col-sm-2 control-label">Client Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientName" pattern="^[a-zA-Z ]+$"  title = "words only" name="clientName" placeholder="Client Name" autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">
 			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" pattern="/[0-9]{0,13}/" title="enter valid contact_number"autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->			  
 
@@ -273,7 +273,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="clientName" class="col-sm-2 control-label">Client Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" value="<?php echo $data[2] ?>" />
+			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" pattern="^[a-zA-Z]+$"  title="words only"autocomplete="off" value="<?php echo $data[2] ?>" />
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">

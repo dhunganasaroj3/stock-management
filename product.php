@@ -75,7 +75,7 @@
 	        	<label for="productName" class="col-sm-3 control-label">Product Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="productName" placeholder="Product Name" name="productName" autocomplete="off">
+				      <input type="text" class="form-control" id="productName" pattern="^[a-zA-Z ]+$" tittle="words only" placeholder="Product Name" name="productName" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	    
 
@@ -83,7 +83,7 @@
 	        	<label for="quantity" class="col-sm-3 control-label">Quantity: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="quantity" placeholder="Quantity" name="quantity" autocomplete="off">
+				      <input type="text" class="form-control" id="quantity" pattern="/[0-9]+$/" title="Numric value only" placeholder="Quantity" name="quantity" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	        	 
 
@@ -91,7 +91,7 @@
 	        	<label for="rate" class="col-sm-3 control-label">Rate: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="rate" placeholder="Rate" name="rate" autocomplete="off">
+				      <input type="text" class="form-control" id="rate" pattern="/[0-9]+$/" title="Numric value only " placeholder="Rate" name="rate" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	     	        
 
@@ -233,7 +233,7 @@
 			        	<label for="editProductName" class="col-sm-3 control-label">Product Name: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editProductName" placeholder="Product Name" name="editProductName" autocomplete="off">
+						      <input type="text" class="form-control" id="editProductName" placeholder="Product Name" pattern="^[a-zA-Z0-9 ]+$" tittle="Name only" name="editProductName" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->	    
 
@@ -241,7 +241,7 @@
 			        	<label for="editQuantity" class="col-sm-3 control-label">Quantity: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editQuantity" placeholder="Quantity" name="editQuantity" autocomplete="off">
+						      <input type="text" class="form-control" id="editQuantity" pattern="/[0-9]+$/" title="Numric value only" placeholder="Quantity" name="editQuantity" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->	        	 
 
@@ -249,7 +249,7 @@
 			        	<label for="editRate" class="col-sm-3 control-label">Rate: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editRate" placeholder="Rate" name="editRate" autocomplete="off">
+						      <input type="text" class="form-control" id="editRate" pattern="/[0-9]+$/" title="Enter the price only"  placeholder="Rate" name="editRate" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->	     	        
 
