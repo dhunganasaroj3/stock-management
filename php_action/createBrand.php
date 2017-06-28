@@ -19,7 +19,6 @@ if($_POST) {
 	 	$valid['messages'] = "Error while adding the members";
 	}
 	 
-
 	$connect->close();
 
 	echo json_encode($valid);
