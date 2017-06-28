@@ -1,4 +1,6 @@
 <?php require_once 'includes/header.php'; ?>
+
+
 <div class="row">
 	<div class="col-md-12">
 
@@ -54,7 +56,7 @@
 	        	<label for="categoriesName" class="col-sm-4 control-label">Categories Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-7">
-				      <input type="text" class="form-control" id="categoriesName" placeholder="Categories Name" name="categoriesName" autocomplete="off" pattern="^[a-zA-Z]+$" title="words only">
+				      <input type="text" class="form-control" id="categoriesName" placeholder="Categories Name" name="categoriesName" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	         	        
 	        <div class="form-group">

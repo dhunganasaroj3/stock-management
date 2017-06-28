@@ -1,4 +1,6 @@
 <?php require_once 'includes/header.php'; ?>
+
+
 <div class="row">
 	<div class="col-md-12">
 
@@ -47,12 +49,12 @@
 	      <div class="modal-body">
 
 	      	<div id="add-brand-messages"></div>
-		
+
 	        <div class="form-group">
 	        	<label for="brandName" class="col-sm-3 control-label">Brand Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="brandName" placeholder="Brand Name" name="brandName" autocomplete="off" pattern="^[a-zA-Z ]+$"  title="words only">
+				      <input type="text" class="form-control" id="brandName" placeholder="Brand Name" name="brandName" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	         	        
 	        <div class="form-group">
@@ -108,7 +110,7 @@
 		        	<label for="editBrandName" class="col-sm-3 control-label">Brand Name: </label>
 		        	<label class="col-sm-1 control-label">: </label>
 					    <div class="col-sm-8">
-					      <input type="text" class="form-control" id="editBrandName" placeholder="Brand Name" name="editBrandName" pattern="^[a-zA-Z ]+$"  title="words only" autocomplete="off">
+					      <input type="text" class="form-control" id="editBrandName" placeholder="Brand Name" name="editBrandName" autocomplete="off">
 					    </div>
 		        </div> <!-- /form-group-->	         	        
 		        <div class="form-group">
