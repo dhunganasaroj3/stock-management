@@ -5,15 +5,15 @@ $(document).ready(function() {
 	$('#navBrand').addClass('active');
 	
 	// manage brand table
-	manageBrandTable = $("#manageBrandTable").DataTable({
+	manageBrandTable = $('#manageBrandTable').DataTable({
 		'ajax': 'php_action/fetchBrand.php',
 		'order': []		
 	});
 
 	// submit brand form function
-	$("#submitBrandForm").unbind('submit').bind('submit', function() {
+	$('#submitBrandForm').unbind('submit').bind('submit', function() {
 		// remove the error text
-		$(".text-danger").remove();
+		$('.text-danger').remove();
 		// remove the form error
 		$('.form-group').removeClass('has-error').removeClass('has-success');			
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 		if(brandName == "") {
 			$("#brandName").after('<p class="text-danger">Brand Name field is required</p>');
-			$('#brandName').closest('.form-group').addClass('has-error');
+			$("#brandName").closest('.form-group').addClass('has-error');
 		} else {
 			// remov error text field
 			$("#brandName").find('.text-danger').remove();
@@ -31,9 +31,9 @@ $(document).ready(function() {
 		}
 
 		if(brandStatus == "") {
-			$("#brandStatus").after('<p class="text-danger">Brand Name field is required</p>');
+			$("#brandStatus").after('<p class="text-danger"> Status field is required </p>');
 
-			$('#brandStatus').closest('.form-group').addClass('has-error');
+			$("#brandStatus").closest('.form-group').addClass('has-error');
 		} else {
 			// remov error text field
 			$("#brandStatus").find('.text-danger').remove();
@@ -55,7 +55,7 @@ $(document).ready(function() {
 					// button loading
 					$("#createBrandBtn").button('reset');
 
-					if(response.success == true) {
+					if(response.success === true) {
 						// reload the manage member table 
 						manageBrandTable.ajax.reload(null, false);						
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
 						// remove the error text
 						$(".text-danger").remove();
 						// remove the form error
-						$('.form-group').removeClass('has-error').removeClass('has-success');
+						$(".form-group").removeClass('has-error').removeClass('has-success');
   	  			
   	  			$('#add-brand-messages').html('<div class="alert alert-success">'+
             '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
@@ -76,10 +76,28 @@ $(document).ready(function() {
 								$(this).remove();
 							});
 						}); // /.alert
-					}  // if
-
-				} // /success
-			}); // /ajax	
+					}  // if-true
+						if(response.success === false) {
+						// reload the manage member table 
+						manageBrandTable.ajax.reload(null, false);						
+  	  					// reset the form text
+						// $("#submitBrandForm")[0].reset();
+						// // remove the error text
+						// $(".text-danger").remove();
+						// // remove the form error
+						// $('.form-group').removeClass('has-error').removeClass('has-success');
+		  	  			$('#add-brand-messages').html('<div class="alert alert-danger">'+
+        			    '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+            			'<strong><span class="glyphicon glyphicon-remove"></span></strong> '+ response.messages +
+          				'</div>');
+  	  					$(".alert-danger").delay(500).show(10, function() {
+							$(this).delay(3000).hide(10, function() {
+								$(this).remove();
+							});
+						}); // /.alert
+					}  // if-false
+				}//success
+			});//ajax	
 		} // if
 
 		return false;
@@ -146,7 +164,7 @@ function editBrands(brandId = null) {
 					}
 
 					if(brandStatus == "") {
-						$("#editBrandStatus").after('<p class="text-danger">Brand Name field is required</p>');
+						$("#editBrandStatus").after('<p class="text-danger">Status field is required</p>');
 
 						$('#editBrandStatus').closest('.form-group').addClass('has-error');
 					} else {
