@@ -42,3 +42,34 @@ div.kv-avatar div.file-input div.file-preview {
 	padding-top: 150px;
 	padding-bottom: 150px;
 }
+.navbar-default{
+    background-color: #5bc0de;
+    border-color:#46b8da;
+    /*margin-bottom: -5px;*/
+  }
+   /*  color :black;
+   background-color: #dae1e5;*
+   } */
+body{
+  background-color: #edf7fc;
+}
+.panel-body{
+  background-color: #eff6f9;
+}
+
+
+hr {
+  height: 4px;
+  margin-left: 15px;
+  margin-bottom:-3px;
+}
+.hr-primary{
+  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
+}
+
+.breadcrumb {
+  background: rgba(245, 245, 245, 0); 
+  border: 0px solid rgba(245, 245, 245, 1); 
+  border-radius: 25px; 
+  display: block;
+}
