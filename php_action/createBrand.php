@@ -1,5 +1,4 @@
 <?php 	
-
 require_once 'core.php';
 $valid['success'] = array('success' => false, 'messages' => array());
 
@@ -15,25 +14,20 @@ if($_POST) {
 		$sql = "INSERT INTO brands (brand_name, brand_active, brand_status) VALUES ('$brandName', '$brandStatus', 1)";
 
 		if($connect->query($sql) === TRUE) {
-	 		$valid['success'] = true;
-			$valid['messages'] = "Successfully Added";	
+	 		$valid['success'] = TRUE;
+			$valid['msessages'] = "Successfully Added";	
 			} else {
-	 				$valid['success'] = false;
+	 				$valid['success'] = FALSE;
 				$valid['messages'] = "Error while adding the members";
-		 }
+		 	}
 	}
 	if ($result->num_rows == 1){
-			$valid["success"] = false;
-			$valid["messages"] = $value."Data already in databas .Please check into your database.Choose other!!";
+			$valid["success"] = FALSE;
+			$valid["messages"] ="Data already in database .Please check into your database OR Choose other!!";
 		
 	}
-	 
-
-	$connect->close();
-
+	 $connect->close();
 	echo json_encode($valid);
  
 } // /if $_POST
-
-
 ?>
