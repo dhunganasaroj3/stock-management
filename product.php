@@ -3,8 +3,8 @@
 
 <div class="row">
 	<div class="col-md-12">
-
-		<ol class="breadcrumb">
+		<hr class="hr-primary" />
+		<ol class="breadcrumb breadcrumb-primary" >
 		  <li><a href="dashboard.php">Home</a></li>		  
 		  <li class="active">Product</li>
 		</ol>
@@ -83,7 +83,7 @@
 	        	<label for="quantity" class="col-sm-3 control-label">Quantity: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="quantity" pattern="/[0-9]+$/" title="Numric value only" placeholder="Quantity" name="quantity" autocomplete="off">
+				      <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	        	 
 
@@ -91,7 +91,7 @@
 	        	<label for="rate" class="col-sm-3 control-label">Rate: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="rate" pattern="/[0-9]+$/" title="Numric value only " placeholder="Rate" name="rate" autocomplete="off">
+				      <input type="text" class="form-control" id="rate" pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$" title="Numric value only " placeholder="Rate" name="rate" autocomplete="off">
 				    </div>
 	        </div> <!-- /form-group-->	     	        
 
@@ -127,7 +127,6 @@
 								while($row = $result->fetch_array()) {
 									echo "<option value='".$row[0]."'>".$row[1]."</option>";
 								} // while
-								
 				      	?>
 				      </select>
 				    </div>
@@ -241,7 +240,7 @@
 			        	<label for="editQuantity" class="col-sm-3 control-label">Quantity: </label>
 			        	<label class="col-sm-1 control-label">: </label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="editQuantity" pattern="/[0-9]+$/" title="Numric value only" placeholder="Quantity" name="editQuantity" autocomplete="off">
+						      <input type="text" class="form-control" id="editQuantity"  placeholder="Quantity" name="editQuantity" autocomplete="off">
 						    </div>
 			        </div> <!-- /form-group-->	        	 
 
