@@ -2,7 +2,8 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<ol class="breadcrumb">
+		<hr class="hr-primary" />
+		<ol class="breadcrumb breadcrumb-primary" >
 		  <li><a href="dashboard.php">Home</a></li>		  
 		  <li class="active">Category</li>
 		</ol>
