@@ -54,11 +54,9 @@ $(document).ready(function() {
 				success:function(response) {
 					// button loading
 					$("#createBrandBtn").button('reset');
-
 					if(response.success === true) {
 						// reload the manage member table 
 						manageBrandTable.ajax.reload(null, false);						
-
   	  			// reset the form text
 						$("#submitBrandForm")[0].reset();
 						// remove the error text
@@ -70,14 +68,13 @@ $(document).ready(function() {
             '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
             '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
           '</div>');
-
   	  			$(".alert-success").delay(500).show(10, function() {
 							$(this).delay(3000).hide(10, function() {
 								$(this).remove();
 							});
 						}); // /.alert
 					}  // if-true
-						if(response.success === false) {
+						if(response.success == false) {
 						// reload the manage member table 
 						manageBrandTable.ajax.reload(null, false);						
   	  					// reset the form text
@@ -162,10 +159,8 @@ function editBrands(brandId = null) {
 						// success out for form 
 						$("#editBrandName").closest('.form-group').addClass('has-success');	  	
 					}
-
 					if(brandStatus == "") {
 						$("#editBrandStatus").after('<p class="text-danger">Status field is required</p>');
-
 						$('#editBrandStatus').closest('.form-group').addClass('has-error');
 					} else {
 						// remove error text field
@@ -173,27 +168,22 @@ function editBrands(brandId = null) {
 						// success out for form 
 						$("#editBrandStatus").closest('.form-group').addClass('has-success');	  	
 					}
-
 					if(brandName && brandStatus) {
 						var form = $(this);
-
 						// submit btn
 						$('#editBrandBtn').button('loading');
-
 						$.ajax({
 							url: form.attr('action'),
 							type: form.attr('method'),
 							data: form.serialize(),
 							dataType: 'json',
 							success:function(response) {
-
 								if(response.success == true) {
 									console.log(response);
 									// submit btn
 									$('#editBrandBtn').button('reset');
-
 									// reload the manage member table 
-									manageBrandTable.ajax.reload(null, false);								  	  										
+									manageBrandTable.ajax.reload(null, false);
 									// remove the error text
 									$(".text-danger").remove();
 									// remove the form error
@@ -201,7 +191,7 @@ function editBrands(brandId = null) {
 			  	  			
 			  	  			$('#edit-brand-messages').html('<div class="alert alert-success">'+
 			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
-			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+response.msessages +
 			          '</div>');
 
 			  	  			$(".alert-success").delay(500).show(10, function() {
@@ -210,7 +200,30 @@ function editBrands(brandId = null) {
 										});
 									}); // /.alert
 								} // /if
-									
+
+								if(response.success == false) {
+									console.log(response);
+									// submit btn
+									$('#editBrandBtn').button('reset');
+									// reload the manage member table 
+									manageBrandTable.ajax.reload(null, false);
+									// remove the error text
+									$(".text-danger").remove();
+									// remove the form error
+									$('.form-group').removeClass('has-error').removeClass('has-success');
+			  	  			
+			  	  			$('#edit-brand-messages').html('<div class="alert alert-danger">'+
+			            '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+			            '<strong><i class="glyphicon glyphicon-ok-sign"></i></strong> '+ response.messages +
+			          '</div>');
+
+			  	  			$(".alert-denger").delay(500).show(10, function() {
+										$(this).delay(3000).hide(10, function() {
+											$(this).remove();
+										});
+									}); // /.alert
+								}	
+
 							}// /success
 						});	 // /ajax												
 					} // /if
