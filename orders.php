@@ -13,8 +13,8 @@ if($_GET['o'] == 'add') {
 
 
 ?>
-
-<ol class="breadcrumb">
+<hr class="hr-primary" />
+<ol class="breadcrumb breadcrumb-primary" >
   <li><a href="dashboard.php">Home</a></li>
   <li>Order</li>
   <li class="active">
@@ -78,7 +78,7 @@ if($_GET['o'] == 'add') {
 			  <div class="form-group">
 			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" pattern="/[0-9]{0,13}/" title="enter valid contact_number"autocomplete="off" />
+			      <input type="tel" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" pattern="(?:\+977)+\-(?:[0-9]{10})" title="enter valid contact_number"autocomplete="off" />
 			    </div>
 			  </div> <!--/form-group-->			  
 
@@ -164,7 +164,7 @@ if($_GET['o'] == 'add') {
 				  <div class="form-group">
 				    <label for="discount" class="col-sm-3 control-label">Discount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
+				      <input type="text" class="form-control" id="discount" pattern="(?:[0-9])+\.?(?:[0-9])+" title=" Numric Value only" name="discount" onkeyup="discountFunc()" autocomplete="off" />
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
@@ -180,7 +180,7 @@ if($_GET['o'] == 'add') {
 			  	<div class="form-group">
 				    <label for="paid" class="col-sm-3 control-label">Paid Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" />
+				      <input type="text" class="form-control"  pattern="(?:[0-9])+\.?(?:[0-9])+" title=" Numric Value only" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" />
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
@@ -382,7 +382,7 @@ if($_GET['o'] == 'add') {
 				  <div class="form-group">
 				    <label for="discount" class="col-sm-3 control-label">Discount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" value="<?php echo $data[7] ?>" />
+				      <input type="text" class="form-control" id="discount" pattern="(?:[0-9])+\.?(?:[0-9])+" name="discount" onkeyup="discountFunc()" autocomplete="off" title="enter the discount value" value="<?php echo $data[7] ?>" />
 				    </div>
 				  </div> <!--/form-group-->	
 				  <div class="form-group">
@@ -398,7 +398,7 @@ if($_GET['o'] == 'add') {
 			  	<div class="form-group">
 				    <label for="paid" class="col-sm-3 control-label">Paid Amount</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" onkeyup="paidAmount()" value="<?php echo $data[9] ?>"  />
+				      <input type="text" class="form-control" id="paid" name="paid" autocomplete="off" pattern="(?:[0-9])+\.(?:[0-9])+" title="Numric value only" onkeyup="paidAmount()" value="<?php echo $data[9] ?>"  />
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
