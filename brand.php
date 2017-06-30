@@ -1,8 +1,8 @@
 <?php require_once 'includes/header.php'; ?>
 <div class="row">
 	<div class="col-md-12">
-
-		<ol class="breadcrumb">
+		 <hr class="hr-primary" />
+		<ol class="breadcrumb breadcrumb-arrow" >
 		  <li><a href="dashboard.php">Home</a></li>		  
 		  <li class="active">Brand</li>
 		</ol>
@@ -34,6 +34,8 @@
 		</div> <!-- /panel -->		
 	</div> <!-- /col-md-12 -->
 </div> <!-- /row -->
+</div>
+<!-- //container -->
 
 <div class="modal fade" id="addBrandModel" tabindex="-1" role="dialog">
   <div class="modal-dialog">
@@ -44,17 +46,15 @@
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title"><i class="fa fa-plus"></i> Add Brand</h4>
 	      </div>
-	      <div class="modal-body">
-
+	    <div class="modal-body">
 	      	<div id="add-brand-messages"></div>
-		
 	        <div class="form-group">
 	        	<label for="brandName" class="col-sm-3 control-label">Brand Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
 				    <div class="col-sm-8">
 				      <input type="text" class="form-control" id="brandName" placeholder="Brand Name" name="brandName" autocomplete="off" pattern="^[a-zA-Z ]+$"  title="words only">
 				    </div>
-	        </div> <!-- /form-group-->	         	        
+	        </div> <!-- /form-group-->	
 	        <div class="form-group">
 	        	<label for="brandStatus" class="col-sm-3 control-label">Status: </label>
 	        	<label class="col-sm-1 control-label">: </label>
@@ -83,7 +83,7 @@
   <!-- /modal-dailog -->
 </div>
 <!-- / add modal -->
-
+</div>
 <!-- edit brand -->
 <div class="modal fade" id="editBrandModel" tabindex="-1" role="dialog">
   <div class="modal-dialog">
